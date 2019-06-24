@@ -26,17 +26,24 @@ public class EmployeeServiceImpl implements EmployeeServicve {
 
 	@Override
 	public void deleteEmployee(Long empId) {
-		emprepo.deleteById(empId);
+		//emprepo.deleteById(empId);
+	}
+
+	/*@Override
+	public List<Employee> getAllEmployees() {
+		return emprepo.findAll();
+	}*/
+
+	@Override
+	public Optional<Employee> getAllEmployee(Long empId) {
+		//return emprepo.findById(empId);
+		return null;
 	}
 
 	@Override
 	public List<Employee> getAllEmployees() {
-		return emprepo.findAll();
-	}
-
-	@Override
-	public Optional<Employee> getAllEmployee(Long empId) {
-		return emprepo.findById(empId);
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 }
