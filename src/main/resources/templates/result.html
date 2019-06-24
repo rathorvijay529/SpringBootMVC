@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Employee Form</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script
+	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+<style>
+.row {
+	margin-left: 0px !important;
+	margin-right: 0px !important;
+	box-shadow: -9px -19px black;
+}
+</style>
+</head>
+<body>
+	<div class="row">
+		<div class="col-md-4"></div>
+		<div class="col-md-4">
+
+			<div th:if="${not #lists.isEmpty(employees)}">
+				<h1>Employee List</h1>
+				<table class="">
+					<tr>
+						<th>Id</th>
+						<th>Name</th>
+						<th>Age</th>
+					</tr>
+					<tr th:each="employee : ${employees}">
+						<td th:text="${employee.id}"></td>
+						<td th:text="${employee.name}"></td>
+						<td th:text="${employee.Age}"></td>
+					</tr>
+				</table>
+			</div>
+		</div>
+		<div class="col-md-4"></div>
+	</div>
+</body>
+</html>
