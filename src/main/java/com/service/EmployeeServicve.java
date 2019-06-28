@@ -3,11 +3,12 @@ package com.service;
 import java.util.List;
 import java.util.Optional;
 
-import com.model.Employee;
+import com.entity.Employee;
+import com.model.EmployeeMO;
 
 public interface EmployeeServicve {
 
-	public Employee createEmployee(Employee emp);
+	public EmployeeMO createEmployee(Employee employee);
 
 	public String updateEmployee(Employee emp);
 

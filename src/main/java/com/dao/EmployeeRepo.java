@@ -3,7 +3,7 @@ package com.dao;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 
-import com.model.Employee;
+import com.entity.Employee;
 
 @Repository("repo")
 public interface EmployeeRepo extends CrudRepository<Employee, Long> {
