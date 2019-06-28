@@ -12,7 +12,6 @@ import org.springframework.web.bind.annotation.RequestMethod;
 
 import com.entity.Employee;
 import com.exception.CustomException;
-import com.model.EmployeeMO;
 import com.service.EmployeeServicve;
 
 @Controller
@@ -31,23 +30,22 @@ public class ControllerClass {
 	}
 
 	@RequestMapping(value = "/saveEmployee", method = RequestMethod.POST)
-	public ResponseEntity<EmployeeMO> create(@RequestBody Employee employeeMO) {
+	public ResponseEntity<Object> create(@RequestBody Employee employeeMO) {
 		try {
 			logger.debug("URI::/saveEmployee");
 			logger.debug("Method::POST");
 			logger.debug("Payload::" + employeeMO);
-			
-			return new ResponseEntity<>(employeeServicve.createEmployee(employeeMO),
+			return new ResponseEntity<>(
+					employeeServicve.createEmployee(employeeMO),
 					HttpStatus.CREATED);
-			
 		} catch (CustomException ex) {
 			logger.error(ex);
-			return new ResponseEntity<>(ex.getErrormsg(),
+			return new ResponseEntity<>(ex.getList(),
 					HttpStatus.INTERNAL_SERVER_ERROR);
 		}
-		
+
 	}
-	
-	 //assignment: getEmployee,getEmployees,dleteEmployee,updateEmployee
+
+	// assignment: getEmployee,getEmployees,dleteEmployee,updateEmployee
 
 }

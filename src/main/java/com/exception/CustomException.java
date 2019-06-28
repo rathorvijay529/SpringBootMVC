@@ -1,31 +1,30 @@
 package com.exception;
 
+import java.util.List;
+
+import com.model.ErrorMO;
+
 public class CustomException extends RuntimeException {
 
-	private String errormsg;
-	private Integer errorCode;
+	private static final long serialVersionUID = 1L;
 
-	public CustomException(String errormsg, Integer errorCode) {
+	private List<ErrorMO> list;
+
+	public CustomException() {
 		super();
-		this.errormsg = errormsg;
-		this.errorCode = errorCode;
 	}
 
-	public String getErrormsg() {
-		return errormsg;
+	public CustomException(List<ErrorMO> list) {
+		super();
+		this.list = list;
 	}
 
-	public void setErrormsg(String errormsg) {
-		this.errormsg = errormsg;
+	public List<ErrorMO> getList() {
+		return list;
 	}
 
-	public Integer getErrorCode() {
-		return errorCode;
+	public void setList(List<ErrorMO> list) {
+		this.list = list;
 	}
 
-	public void setErrorCode(Integer errorCode) {
-		this.errorCode = errorCode;
-	}
-
-	
 }
