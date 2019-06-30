@@ -1,11 +1,12 @@
 package com.dao;
 
-import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 
-import com.model.Employee;
+import com.entity.Employee;
 
 @Repository
-public interface EmployeeRepo extends JpaRepository<Employee, Long> {
+public interface EmployeeRepo extends CrudRepository<Employee, Long> {
 
+	public Employee findByEmail(String email);
 }
